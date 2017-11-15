@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sample">
+
+	<select id="selectDataList" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    ID,
+			    TITLE,
+			    CNT,
+			    OFFSET
+			FROM
+			    DATA
+		]]>
+	</select>
+
+
+	<insert id="insertSkip">
+	<![CDATA[
+		INSERT INTO data (`ID`, `TITLE`, `CNT`) VALUES ('AD1', 'skip', '1');
+	]]>
+	</insert>
+
+	<insert id="insertStart">
+	<![CDATA[
+		INSERT INTO data (`ID`, `TITLE`, `CNT`) VALUES ('AD1', 'start', '1');
+	]]>
+	</insert>
+
+	<insert id="insertFirstQuartile">
+	<![CDATA[
+		INSERT INTO data (`ID`, `TITLE`, `CNT`) VALUES ('AD1', 'firstQuartile', '1');
+	]]>
+	</insert>
+
+	<insert id="insertMidpoint">
+	<![CDATA[
+		INSERT INTO data (`ID`, `TITLE`, `CNT`) VALUES ('AD1', 'midpoint', '1');
+	]]>
+	</insert>
+
+	<insert id="insertThirdQuartile">
+	<![CDATA[
+		INSERT INTO data (`ID`, `TITLE`, `CNT`) VALUES ('AD1', 'thirdQuartile', '1');
+	]]>
+	</insert>
+
+	<insert id="insertComplete">
+	<![CDATA[
+		INSERT INTO data (`ID`, `TITLE`, `CNT`) VALUES ('AD1', 'complete', '1');
+	]]>
+	</insert>
+
+	<insert id="insertRewind">
+	<![CDATA[
+		INSERT INTO data (`ID`, `TITLE`, `CNT`) VALUES ('AD1', 'rewind', '1');
+	]]>
+	</insert>
+
+	<insert id="insertResume">
+	<![CDATA[
+		INSERT INTO data (`ID`, `TITLE`, `CNT`) VALUES ('AD1', 'resume', '1');
+	]]>
+	</insert>
+
+	<insert id="insertProgress">
+	<![CDATA[
+		INSERT INTO data (`ID`, `TITLE`, `CNT`, `OFFSET`) VALUES ('AD1', 'progress', '1', #{offset});
+	]]>
+	</insert>
+
+
+</mapper>
